@@ -1,0 +1,8 @@
+string shape
+float64 param1
+float64 param2
+---
+string dimensions
+float64 area
+float64 perimeter
+
