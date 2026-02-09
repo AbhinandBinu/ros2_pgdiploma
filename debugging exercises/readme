@@ -1,0 +1,64 @@
+# ROS 2 Palindrome Service – Debugging Exercise
+
+This repository contains a **ROS 2 (Humble, Python) service-based application** that was used as a **debugging test** as part of my **PG Diploma coursework**.
+
+The objective of this exercise was not just to run the code, but to **identify, analyze, and correct multiple errors** present across different components of a ROS 2 system.
+
+---
+
+## 📌 Problem Statement
+
+The application checks whether a given string is a **palindrome** using a **ROS 2 service**.
+
+However, the provided implementation contained multiple intentional errors in:
+- Service server logic
+- Client execution flow
+- Launch configuration
+- Python packaging (`setup.py`)
+- Overall ROS 2 architecture
+
+---
+
+## 🧩 System Architecture
+
+- **Interface Package**
+  - Defines the custom `.srv` file (`CheckPalindrome.srv`)
+- **Service Package**
+  - Server node: processes palindrome logic
+  - Client node: sends request and displays response
+  - Launch file: runs server and client together
+
+---
+
+## 🐞 Errors Identified
+
+Some of the key issues identified during debugging include:
+
+- Service name mismatch between client and server
+- Incorrect string reversal logic for palindrome checking
+- Missing return statement in service callback
+- Client node shutting down before receiving response
+- Launch file not installed properly
+- Missing imports and syntax errors in `setup.py`
+- Lack of separation between interface and implementation packages
+
+---
+
+## ✅ Corrections Applied
+
+- Fixed service name consistency
+- Corrected palindrome checking logic
+- Ensured proper request–response handling
+- Added client spinning for service completion
+- Properly installed launch files via `setup.py`
+- Corrected Python packaging errors
+- Refactored architecture to follow ROS 2 best practices
+
+---
+
+## ▶️ How to Build & Run
+
+```bash
+source /opt/ros/humble/setup.bash
+colcon build
+source install/setup.bash
