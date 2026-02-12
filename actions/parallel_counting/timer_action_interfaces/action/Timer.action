@@ -1,0 +1,5 @@
+int32 duration
+---
+string result_message
+---
+int32 current_value
